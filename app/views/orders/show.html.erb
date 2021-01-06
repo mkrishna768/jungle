@@ -5,7 +5,6 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <%puts @order.line_items[0].product.inspect%>
     <h4>Thank you for your order!</h4>
     <table class="table table-bordered">
         <thead>
@@ -18,7 +17,6 @@
         </thead>
         <tbody>
           <% @order.line_items.each do |item| %>
-            <% puts item.inspect %>
             <%= render 'line_item', product: item.product, quantity: item.quantity.to_i %>
           <% end %>
         </tbody>
